@@ -9,8 +9,9 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+           
         <!-- Styles -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <style>
             html, body {
                 background-color:#037bfc;
@@ -35,7 +36,19 @@
     </head>
     <body>
         <div>
-          <h2 class="title">Todo App</h2>
+          <h2 class="title bg-dark">Todo App</h2>
+           <form>
+               <div class="container row">
+                 <div class="offset-md-6 col-md-6">
+                 <input type="text">
+                 <input type="submit" value="Add Todo" class="btn btn-success">
+                 </div>
+               
+               </div>
+              
+           </form>
+
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     </body>
 </html>
