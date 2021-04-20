@@ -14,4 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/todo/store', [
+    'uses' => 'TodoController@store',
+    'as' => 'todo.store'
+]);
 

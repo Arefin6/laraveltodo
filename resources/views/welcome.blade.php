@@ -37,10 +37,11 @@
     <body>
         <div>
           <h2 class="title bg-dark">Todo App</h2>
-           <form>
+           <form action="{{ route('todo.store') }}" method="post">
+                  {{ csrf_field() }}
                <div class="container row">
                  <div class="offset-md-6 col-md-6">
-                 <input type="text">
+                 <input type="text" name="name" placeholder="Add Todo">
                  <input type="submit" value="Add Todo" class="btn btn-success">
                  </div>
                
