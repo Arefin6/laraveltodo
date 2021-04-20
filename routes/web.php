@@ -10,12 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [
+    'uses' => 'TodoController@index',
+    'as' => 'todo.index'
+]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::post('/todo/store', [
     'uses' => 'TodoController@store',
     'as' => 'todo.store'
+]);
+Route::get('/todo/delete/{id}', [
+    'uses' => 'TodoController@destroy',
+    'as' => 'todo.delete'
 ]);
 

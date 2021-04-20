@@ -12,6 +12,9 @@
            
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
         <style>
             html, body {
                 background-color:#037bfc;
@@ -32,6 +35,13 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .list-group li{
+                color:#000000;
+            }
+            .icon{
+                margin-left:25rem;
+                margin-right:10px;
+            }
         </style>
     </head>
     <body>
@@ -46,8 +56,36 @@
                  </div>
                
                </div>
-              
            </form>
+                    
+           <div class="row container mt-4">
+           <div class="offset-md-4 col-md-6">
+           @if($todos->count()>0)
+                
+           <ul class="list-group">
+           @foreach($todos as $todo)
+            <li class="list-group-item mt-3 ">{{$todo->name}}
+               <i class="fas fa-pencil icon text-warning"></i>
+               <a href="{{route('todo.delete', ['id'=>$todo->id])}}">
+               <i class="fas fa-trash text-danger"></i>
+               </a>
+         
+
+           
+            </li>
+            @endforeach
+         </ul> 
+           </div>
+          
+                
+                @else
+                    <tr>
+                    		<th colspan="5" class="text-center">No todo Yet..</th>
+                    </tr>
+                 @endif        
+           
+           </div>   
+       
 
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

@@ -8,6 +8,12 @@ use App\Todo;
 
 class TodoController extends Controller
 {
+
+    public function index()
+    {
+         return view('welcome')->with('todos', Todo::all());
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -22,6 +28,16 @@ class TodoController extends Controller
 
         $todo->save();
 
+        return redirect()->back();
+    }
+
+    public function destroy($id)
+    {
+        
+		$todo = Todo::find($id);
+		
+		$todo->delete();
+		
 
         return redirect()->back();
     }
